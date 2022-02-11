@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Context } from '../../context/context';
 
-export function Task({ task, deleteTask, updateTask }) {
+export function Task({ task }) {
+    const { deleteTask, updateTask } = useContext(Context);
     function handleClick() {
         deleteTask(task);
     }

@@ -1,8 +1,10 @@
 /* eslint-disable react/no-typos */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Context } from '../../context/context';
 import { Task } from '../../models/task';
 
-export function Add({ addTask }) {
+export function Add() {
+    const { addTask } = useContext(Context);
     const [newTask, setNewTask] = useState(new Task());
 
     const handleSubmit = (ev) => {
