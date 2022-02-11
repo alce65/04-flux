@@ -1,5 +1,7 @@
 import './app.css';
+import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Context } from './context/context';
 import { Header } from './components/core/header';
 import { Footer } from './components/core/footer';
 import { ToDo } from './components/todo/todo';
@@ -8,7 +10,7 @@ import { About } from './components/about/about';
 import { Detail } from './components/todo/detail';
 
 export function App() {
-    const title = 'TODO List with Flux';
+    const { title } = useContext(Context);
     const author = title ? 'Alejandro' : '';
     const brand = 'ISDI Coders';
     const menuOptions = [
